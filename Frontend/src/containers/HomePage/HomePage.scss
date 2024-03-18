@@ -1,0 +1,191 @@
+.section-share {
+    height: 370px;
+
+    .section-container {
+        margin: 0 50px;
+        display: flex;
+        flex-direction: column;
+
+        .section-header {
+            height: 60px;
+            margin-top: 20px;
+
+            .btn-section {
+                float: right;
+                padding: 10px 15px;
+                border: none;
+                outline: none;
+                display: block;
+                background: white;
+                color: black;
+                cursor: pointer;
+                text-transform: uppercase;
+                margin-top: 10px;
+            }
+
+            .title-section {
+                font-size: 25px;
+                font-weight: 600;
+                margin-top: 10px;
+            }
+        }
+
+    }
+}
+
+
+.section-share {
+    &.section-specialty {
+        background: #f5f5f5;
+    }
+
+    &.section-outstanding-doctor {
+        background: #f5f5f5;
+    }
+
+    &.section-about {
+        height: 600px;
+        margin: 0 50px;
+        border-top: 1px solid #b5b4b4;
+        border-bottom: 1px solid #b5b4b4;
+    }
+
+    .section-body {
+        .section-customize {
+            .section-specialty {
+                background: url('../../assets/speialty/1.png');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+                height: 200px;
+                width: 340px;
+
+            }
+
+            .section-medical-facility {
+                background: url('../../assets/medical-facility/1.jpg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+                height: 180px;
+                width: 360px;
+            }
+
+            .section-outstanding-doctor {
+                background: url('../../assets/outstanding-doctor/1.png');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+                // height: 470px;
+                // width: 340px;
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+            }
+
+            .handbook {
+                background: url('../../assets/handbook/141458-congdongtinhthan.jpeg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+                height: 200px;
+                width: 340px;
+
+            }
+        }
+    }
+}
+
+.section-outstanding-doctor {
+    .outer-bg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+
+    }
+
+    .section-customize {
+        padding: 5px;
+
+        .customize-boder {
+            border: 1px solid #3423;
+            padding: 20px;
+        }
+    }
+}
+
+.home-footer {
+    text-align: center;
+    padding-top: 8px;
+
+}
+
+.section-about {
+    margin: 0 100px;
+
+    .section-about-header {
+        padding: 20px 10px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .section-about-content {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+
+        .content-left {
+            width: 60%;
+
+        }
+
+        .content-right {
+            width: 40%;
+
+            p {
+                text-align: justify;
+                font-size: inherit;
+            }
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////
+.slick-prev {
+    border: 2px solid rgb(220, 219, 219) !important;
+    left: -10px !important;
+    z-index: 1000 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+
+    &:hover {
+        background: #a5a3a3 !important;
+
+    }
+}
+
+.slick-prev::before,
+.slick-next::before {
+    // content: "\e257" !important;
+    font-family: Montserrat !important;
+    color: green !important;
+}
+
+.slick-next {
+    border: 2px solid rgb(220, 219, 219) !important;
+    right: -10px !important;
+    z-index: 1000 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+
+    &:hover {
+        background: #a5a3a3 !important;
+
+    }
+}

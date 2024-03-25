@@ -28,7 +28,7 @@ let handleUserLogin = (email, password) => {
             if (isExist) {
                 let user = await db.User.findOne({
                     where: { email: email },
-                    attributes: ['email', 'roleId', 'password','firstName','lastName'],
+                    attributes: ['email', 'roleId', 'password', 'firstName', 'lastName'],
                     raw: true,
                 });
                 if (user) {
@@ -129,7 +129,7 @@ let createNewUser = (data) => {
                     lastName: data.lastName,
                     address: data.address,
                     phonenumber: data.phonenumber,
-                    gender: data.gender === '1' ? true : false,
+                    gender: data.gender,
                     roleId: data.roleId,
                     positionId: data.positionId,
                 })
@@ -175,7 +175,7 @@ let updateUserData = (data) => {
 
     return new Promise(async (resolve, reject) => {
         try {
-            if (!data.id) {
+            if (!data.id || !data.roleId || !data.positionId || !data.gender) {
                 resolve({
                     error: 2,
                     errMessage: 'Không hợp lệ'
@@ -194,12 +194,13 @@ let updateUserData = (data) => {
                 //     lastName: data.lastName,
                 //     address: data.address,
                 //     phonenumber: data.phonenumber,
-                // });
-                user.email = data.email;
-                user.password = data.password;
+                // }); 
                 user.firstName = data.firstName;
                 user.lastName = data.lastName;;
                 user.address = data.address;
+                user.gender = data.gender;
+                user.positionId = data.positionId;
+                user.roleId = data.roleId;
                 user.phonenumber = data.phonenumber;
                 await user.save();
 
@@ -222,16 +223,16 @@ let updateUserData = (data) => {
 let getAllCodeService = (typeInput) => {
     return new Promise(async (resolve, reject) => {
         try {
-            if(!typeInput){
+            if (!typeInput) {
                 resolve({
-                    errCode:1,
-                    errMessage:'Thiếu tham số sai'
+                    errCode: 1,
+                    errMessage: 'Thiếu tham số sai'
                 })
-            }else{
+            } else {
 
                 let res = {};
                 let allcode = await db.Allcode.findAll({
-                    where: {type: typeInput}
+                    where: { type: typeInput }
                 });
                 res.errCode = 0;
                 res.data = allcode;

@@ -44,6 +44,7 @@ class TableManageUser extends Component {
                         <th>Gender</th>
                         <th>Position</th>
                         <th>Role</th>
+                        
                         <th>Actions</th>
                     </tr>
                     {arrUsers && arrUsers.length > 0 && arrUsers.map((item, index) => {
@@ -59,6 +60,8 @@ class TableManageUser extends Component {
                                 <td>{item.gender}</td>
                                 <td>{item.positionId}</td>
                                 <td>{item.roleId}</td>
+                                
+                                
                                 <td>
                                     <button onClick={() => this.handleEditUser(item)} className="btn-edit" ><i class="fa fa-pencil-alt"></i></button>
                                     <button onClick={() => this.handleDeleteUser(item)} className="btn-delete" ><i class="fa fa-trash"></i></button>
